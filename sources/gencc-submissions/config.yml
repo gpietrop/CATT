@@ -1,0 +1,18 @@
+--- # GenCC Submissions
+- name: gencc-submissions
+  suffix: gccsub
+  url: https://search.thegencc.org/download/action/submissions-export-tsv
+  file: gencc-submissions.tsv
+  header_row: 0
+  skip_rows: None
+  delimiter: tab
+  quoting: 0
+  strip_hash: 0
+  md5_url:
+  md5_file:
+  template: >
+    ${dict.submitter_title} has assessed the ${dict.gene_symbol} gene and found an association with ${dict.disease_title} 
+    with an inheritance pattern of ${dict.moi_title}. The submitter's classification of this association is 
+    ${dict.classification_title} as of ${dict.submitted_as_date}. If available, a public report of this gene-disease 
+    assertion can be found at: ${dict.submitted_as_public_report_url}. PMIDs for any publications that are associated 
+    with this curation are listed here: ${dict.submitted_as_pmids}.

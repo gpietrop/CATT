@@ -1,0 +1,22 @@
+--- # ClinVar Variant Summary
+- name: clinvar-variant-summary
+  suffix: cvvar
+  url: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz
+  download_file: variant_summary.txt.gz
+  file: variant_summary.txt
+  gzip: 1
+  header_row: 0
+  skip_rows: None
+  delimiter: tab
+  quoting: 0
+  strip_hash: 1
+  md5_url: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz.md5
+  md5_file: variant_summary.txt.gz.md5
+  template: >
+    The ${dict.Name} variant (Variation ID ${dict.VariationID}) has a summarized clinical significance of 
+    ${dict.ClinicalSignificance} based on ${dict.NumberSubmitters} individual submission(s) made to ClinVar. This variant 
+    is a(n) ${dict.Type} in the ${dict.GeneSymbol} gene(s). It has been associated with the following condition(s): 
+    ${dict.PhenotypeList}. This variant was last evaluated by a submitter on 
+    {% choose %}{% when len(str(dict.LastEvaluated)) > 0 %}${dict.LastEvaluated}{% end %}
+    {% otherwise %}"date not provided"{% end %}{% end %}. The level of evidence 
+    for this variant's interpretation, based on the aggregation of all submissions is: ${dict.ReviewStatus}.

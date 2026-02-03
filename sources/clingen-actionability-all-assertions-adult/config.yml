@@ -1,0 +1,16 @@
+--- # ClinGen Actionability All Assertions Adults
+- name: clingen-actionability-all-assertions-adult
+  suffix: cgactadult
+  url: https://actionability.clinicalgenome.org/ac/Adult/api/summ/assertion?format=tsv&assertionType=all
+  file: clingen-actionability-all-assertions-adult.tsv
+  header_row: 0
+  skip_rows: None
+  delimiter: tab
+  quoting: 0
+  strip_hash: 1
+  md5_url:
+  md5_file:
+  template: >
+    Clingen's consensus ${dict.context} actionability gene-disease assertions indicate pathogenic mutations in gene(s) 
+    ${dict.geneOrVariant} may be associated with condition ${dict.disease} with ${dict.consensusAssertion} and status 
+    ${dict['status-overall']} and assertion status ${dict['status-assertion']}.

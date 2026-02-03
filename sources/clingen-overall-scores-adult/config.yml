@@ -1,0 +1,23 @@
+--- # ClinGen Overall Scores Adult
+- name: clingen-overall-scores-adult
+  suffix: cgoveradult
+  url: https://actionability.clinicalgenome.org/ac/Adult/api/summ?format=tsv
+  file: clingen-overall-scores-adult.tsv
+  header_row: 0
+  skip_rows: None
+  delimiter: tab
+  quoting: 0
+  strip_hash: 1
+  md5_url:
+  md5_file:
+  template: >
+    {% choose %}
+    {% when dict['status-stg1'] == 'Failed' %}ClinGen's current review of the actionability of the 
+    ${dict.geneOrVariant} gene(s) associated with ${dict.disease} is incomplete and no scores have been provided. 
+    This was last updated on ${dict.lastUpdated}.{% end %}
+    {% otherwise %}ClinGen's review of the actionability of the ${dict.geneOrVariant} gene(s) associated with 
+    ${dict.disease} has resulted in an overall actionability score of ${dict.overall} for the clinical outcome of 
+    ${dict.outcome} with the potential intervention ${dict.intervention}. The individual scores for this assertion 
+    include a score of ${dict.severity} for severity, ${dict.likelihood} for likelihood, ${dict.natureOfIntervention} 
+    for nature of intervention, and ${dict.effectiveness} for effectiveness. This assertion was released on 
+    ${dict.releaseDate}.{% end %}{% end %}

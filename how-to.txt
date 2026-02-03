@@ -1,0 +1,19 @@
+Create an LDLR-only ClinVar file: choose the subsection where the GeneSymbol is == LDLR
+
+awk -F'\t' 'NR==1{print; next} $5=="LDLR"{print}' sources/clinvar-variant-summary/variant_summary.txt > sources/clinvar-variant-summary/variant_summary_LDLR.txt
+
+Now there is another .txt file that contain only LDLR gene.
+Then swap file to that CATT reads the LDLR-only file
+
+mv sources/clinvar-variant-summary/variant_summary.txt sources/clinvar-variant-summary/variant_summary_full.txt
+mv sources/clinvar-variant-summary/variant_summary_LDLR.txt sources/clinvar-variant-summary/variant_summary.txt
+
+Now run CATT to create the .csv file
+
+python main.py --loglevel INFO --sources clinvar-variant-summary --joined-output fh_LDLR_clinvar_full.csv
+
+Now we obtain a .csv with:
+- variant identifiers
+- gene = LDLR
+- clinical significance (could be our label?) -> We can predict the probability that an LDLR variant is FH-pathogenic
+
