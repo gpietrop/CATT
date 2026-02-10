@@ -165,3 +165,4 @@ sources/clingen-consensus-assertions-pediatric/clingen-consensus-assertions-pedi
 sources/clingen-overall-scores-adult/clingen-overall-scores-adult.tsv
 sources/clingen-overall-scores-pediatric/clingen-overall-scores-pediatric.tsv
 sources/clinvar-variant-summary/variant_summary_full.txt
+clinvar_20260208.vcf.gz
