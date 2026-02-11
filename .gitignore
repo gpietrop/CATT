@@ -167,3 +167,5 @@ sources/clingen-overall-scores-pediatric/clingen-overall-scores-pediatric.tsv
 sources/clinvar-variant-summary/variant_summary_full.txt
 clinvar_20260208.vcf.gz
 clinvar_20260208.vcf.gz.tbi
+hgvs4variation.txt.gz
+variant_summary.txt.gz
