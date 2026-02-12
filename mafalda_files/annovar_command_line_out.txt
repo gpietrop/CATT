@@ -1,0 +1,44 @@
+[malafaia@constellation annovar]$ perl table_annovar.pl /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb   -buildver hg38   -out /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output   -remove   -protocol refGene,dbnsfp47a,1000g2015aug_all,gnomad211_exome   -operation g,f,f,f   -nastring .   -csvout   -polish   -otherinfo
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=refGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg38 -dbtype refGene -outfile /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene -exonsort -nofirstcodondel /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb>
+NOTICE: Output files are written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.variant_function, /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.exonic_variant_function
+NOTICE: Reading gene annotation from /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_refGene.txt ... Done with 88819 transcripts (including 21511 without coding sequence annotation) for 28307 unique genes
+NOTICE: Processing next batch with 3477 unique variants in 3477 input lines
+NOTICE: Reading FASTA sequences from /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_refGeneMrna.fa ... Done with 5 sequences
+WARNING: A total of 606 sequences will be ignored due to lack of correct ORF annotation
+NOTICE: Variants with invalid input format are written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.invalid_input
+
+NOTICE: Running with system command <coding_change.pl  /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.exonic_variant_function.orig /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_refGene.txt /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_refGeneMrna.fa -alltranscript -out /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.fa -newevf /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.refGene.exonic_variant_function>
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=dbnsfp47a
+NOTICE: Finished reading 149 column headers for '-dbtype dbnsfp47a'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype dbnsfp47a -buildver hg38 -outfile /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb -otherinfo>
+NOTICE: Output file with variants matching filtering criteria is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_dbnsfp47a_dropped, and output file with other variants is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_dbnsfp47a_filtered
+NOTICE: Processing next batch with 3477 unique variants in 3706 input lines
+NOTICE: Database index loaded. Total number of bins is 556674 and the number of bins to be scanned is 50
+NOTICE: Scanning filter database /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_dbnsfp47a.txt...Done
+NOTICE: Variants with invalid input format are written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.invalid_input
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_all
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_all -buildver hg38 -outfile /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb>
+NOTICE: Output file with variants matching filtering criteria is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_ALL.sites.2015_08_dropped, and output file with other variants is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_ALL.sites.2015_08_filtered
+NOTICE: Processing next batch with 3477 unique variants in 3706 input lines
+NOTICE: Database index loaded. Total number of bins is 2821635 and the number of bins to be scanned is 25
+NOTICE: Scanning filter database /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_ALL.sites.2015_08.txt...Done
+NOTICE: Variants with invalid input format are written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.invalid_input
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=gnomad211_exome
+NOTICE: Finished reading 17 column headers for '-dbtype gnomad211_exome'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype gnomad211_exome -buildver hg38 -outfile /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb -otherinfo>
+NOTICE: Output file with variants matching filtering criteria is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_gnomad211_exome_dropped, and output file with other variants is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_gnomad211_exome_filtered
+NOTICE: Processing next batch with 3477 unique variants in 3706 input lines
+NOTICE: Database index loaded. Total number of bins is 771804 and the number of bins to be scanned is 59
+NOTICE: Scanning filter database /export/scratch2/data/malafaia/ANNOVAR/humandb/hg38_gnomad211_exome.txt...Done
+NOTICE: Variants with invalid input format are written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.invalid_input
+-----------------------------------------------------------------
+NOTICE: Multianno output file is written to /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output.hg38_multianno.csv
