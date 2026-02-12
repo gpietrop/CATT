@@ -1,4 +1,15 @@
-[malafaia@constellation annovar]$ perl table_annovar.pl /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput /export/scratch2/data/malafaia/ANNOVAR/humandb   -buildver hg38   -out /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output   -remove   -protocol refGene,dbnsfp47a,1000g2015aug_all,gnomad211_exome   -operation g,f,f,f   -nastring .   -csvout   -polish   -otherinfo
+[malafaia@constellation annovar]$ perl table_annovar.pl \
+/export/scratch2/data/malafaia/ANNOVAR/files_clinvar/annovar_file.avinput \
+/export/scratch2/data/malafaia/ANNOVAR/humandb \
+-buildver hg38 \
+-out /export/scratch2/data/malafaia/ANNOVAR/files_clinvar/output \
+-remove \
+-protocol refGene,dbnsfp47a,1000g2015aug,gnomad211_exome \
+-operation g,f,f,f \
+-nastring . \
+-csvout \
+-polish \
+-otherinfo
 -----------------------------------------------------------------
 NOTICE: Processing operation=g protocol=refGene
 
